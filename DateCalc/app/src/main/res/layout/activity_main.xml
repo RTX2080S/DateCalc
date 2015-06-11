@@ -71,7 +71,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Set Today as Date 2"
+                android:text="@string/SetToday2"
                 android:id="@+id/buttonToday2"
                 android:layout_below="@+id/dateDisplay2"
                 android:layout_alignParentEnd="true"
