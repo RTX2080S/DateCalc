@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Date Calculator</string>
-    <string name="app_version">1.2</string>
+    <string name="app_version">1.5</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_calendar">Calendar</string>
     <string name="action_about">About</string>
     <string name="result">Days between the two dates</string>
