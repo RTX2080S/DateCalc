@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private EditText dateDisplay1, dateDisplay2;
-    private Button buttonPick1, buttonPick2, buttonOK, buttonGo;
+    private Button buttonPick1, buttonPick2, buttonOK, buttonGo, buttonToday1, buttonToday2;
     private DatePicker myDatePicker;
     private TextView outputBox;
     private int currentId = 0;
@@ -69,6 +69,8 @@ public class MainActivity extends ActionBarActivity {
         dateDisplay2 = (EditText) findViewById(R.id.dateDisplay2);
         buttonPick1 = (Button) findViewById(R.id.button1);
         buttonPick2 = (Button) findViewById(R.id.button2);
+        buttonToday1 = (Button) findViewById(R.id.buttonToday1);
+        buttonToday2 = (Button) findViewById(R.id.buttonToday2);
         buttonOK = (Button) findViewById(R.id.pickOK);
         buttonGo = (Button) findViewById(R.id.buttonGo);
         outputBox = (TextView) findViewById(R.id.textView);
@@ -92,6 +94,8 @@ public class MainActivity extends ActionBarActivity {
     private void beginPicking() {
         dateDisplay1.setVisibility(View.INVISIBLE);
         dateDisplay2.setVisibility(View.INVISIBLE);
+        buttonToday1.setVisibility(View.INVISIBLE);
+        buttonToday2.setVisibility(View.INVISIBLE);
         buttonPick1.setVisibility(View.INVISIBLE);
         buttonPick2.setVisibility(View.INVISIBLE);
         buttonGo.setVisibility(View.INVISIBLE);
@@ -103,6 +107,8 @@ public class MainActivity extends ActionBarActivity {
     private void donePicking() {
         dateDisplay1.setVisibility(View.VISIBLE);
         dateDisplay2.setVisibility(View.VISIBLE);
+        buttonToday1.setVisibility(View.VISIBLE);
+        buttonToday2.setVisibility(View.VISIBLE);
         buttonPick1.setVisibility(View.VISIBLE);
         buttonPick2.setVisibility(View.VISIBLE);
         buttonGo.setVisibility(View.VISIBLE);
@@ -128,9 +134,19 @@ public class MainActivity extends ActionBarActivity {
         setDatePickerVisibility(2, View.VISIBLE);
     }
 
-    public Calendar getDate() {
+    private Calendar getDate() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(myDatePicker.getYear(), myDatePicker.getMonth(), myDatePicker.getDayOfMonth(), 0, 0, 0);
+        return calendar;
+    }
+
+    private Calendar getToday() {
+        Calendar calendar = Calendar.getInstance();
+        Date today = new Date();
+        today.setHours(0);
+        today.setMinutes(0);
+        today.setSeconds(0);
+        calendar.setTime(today);
         return calendar;
     }
 
@@ -162,4 +178,26 @@ public class MainActivity extends ActionBarActivity {
         }
         setDatePickerVisibility(0, View.INVISIBLE);
     }
+
+    private void setAsToday() {
+        if (currentId == 1) {
+            date1 = getToday();
+            dateDisplay1.setText(dateToStr(date1.getTime()));
+        }
+        if (currentId == 2) {
+            date2 = getToday();
+            dateDisplay2.setText(dateToStr(date2.getTime()));
+        }
+    }
+
+    public void ButtonToday1Clicked(View v) {
+        currentId = 1;
+        setAsToday();
+    }
+
+    public void ButtonToday2Clicked(View v) {
+        currentId = 2;
+        setAsToday();
+    }
+
 }

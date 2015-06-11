@@ -36,6 +36,16 @@
                 android:onClick="Button1Clicked"
                 android:text="Pick date 1" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/SetToday1"
+                android:id="@+id/buttonToday1"
+                android:layout_below="@+id/dateDisplay1"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:onClick="ButtonToday1Clicked" />
+
             <EditText
                 android:id="@+id/dateDisplay2"
                 android:layout_width="match_parent"
@@ -43,29 +53,39 @@
                 android:layout_alignBottom="@+id/button2"
                 android:layout_alignEnd="@+id/dateDisplay1"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/dateDisplay1"
                 android:ems="10"
                 android:enabled="false"
-                android:inputType="date" />
+                android:inputType="date"
+                android:layout_alignTop="@+id/button2" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@+id/button1"
                 android:layout_gravity="right"
                 android:onClick="Button2Clicked"
-                android:text="Pick date 2" />
+                android:text="Pick date 2"
+                android:layout_below="@+id/buttonToday1"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Today as Date 2"
+                android:id="@+id/buttonToday2"
+                android:layout_below="@+id/dateDisplay2"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:onClick="ButtonToday2Clicked" />
 
             <Button
                 android:id="@+id/buttonGo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/dateDisplay2"
-                android:layout_centerHorizontal="true"
                 android:onClick="ButtonGoClick"
-                android:text="@string/result" />
+                android:text="@string/result"
+                android:layout_below="@+id/buttonToday2"
+                android:layout_toStartOf="@+id/pickOK" />
 
             <TextView
                 android:id="@+id/textView"
