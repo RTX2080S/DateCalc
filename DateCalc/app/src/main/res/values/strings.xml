@@ -9,6 +9,6 @@
     <string name="action_settings">Settings</string>
     <string name="action_exit">Close</string>
     <string name="title_activity_calendar">Simple Calendar</string>
-    <string name="SetToday1">Set Today for Date 1</string>
+    <string name="SetToday1">Set Today as Date 1</string>
     <string name="SetToday2">Set Today as Date 2</string>
 </resources>
