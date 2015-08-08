@@ -1,6 +1,7 @@
 package alienlab.datecalc;
 
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,7 +65,10 @@ public class MainActivity extends ActionBarActivity {
     private Calendar date1, date2;
     private boolean picking = false;
 
+    private RelativeLayout relativeLayout;
+
     private void assignControlNames() {
+        relativeLayout = (RelativeLayout) findViewById(R.id.mainLayout);
         myDatePicker = (DatePicker) findViewById(R.id.datePicker);
         dateDisplay1 = (EditText) findViewById(R.id.dateDisplay1);
         dateDisplay2 = (EditText) findViewById(R.id.dateDisplay2);
@@ -101,6 +106,7 @@ public class MainActivity extends ActionBarActivity {
         buttonGo.setVisibility(View.INVISIBLE);
 
         outputBox.setVisibility(View.INVISIBLE);
+        relativeLayout.setBackground(getResources().getDrawable(R.drawable.green));
         picking = true;
     }
 
@@ -113,6 +119,7 @@ public class MainActivity extends ActionBarActivity {
         buttonPick2.setVisibility(View.VISIBLE);
         buttonGo.setVisibility(View.VISIBLE);
 
+        relativeLayout.setBackground(getResources().getDrawable(R.drawable.grass));
         picking = false;
     }
 
