@@ -1,7 +1,7 @@
 package alienlab.datecalc;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -24,7 +24,7 @@ public class ActivityAbout extends ActionBarActivity {
         myTextView2 =(TextView) findViewById(R.id.textView2);
 
         String info =  "\n" + getString(R.string.app_name);
-        String info2 = "\nVersion " + getString(R.string.app_version) + "\n\nBy Steven @ Alien Laboratory";
+        String info2 = "\nVersion " + getString(R.string.app_version) + "\n\nBy 小阿狸";
         myTextView.setText(info);
         myTextView2.setText(info2);
     }

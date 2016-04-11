@@ -1,12 +1,10 @@
 package alienlab.datecalc;
 
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -106,7 +104,7 @@ public class MainActivity extends ActionBarActivity {
         buttonGo.setVisibility(View.INVISIBLE);
 
         outputBox.setVisibility(View.INVISIBLE);
-        relativeLayout.setBackground(getResources().getDrawable(R.drawable.green));
+        relativeLayout.setBackground(getResources().getDrawable(R.drawable.light));
         picking = true;
     }
 
@@ -119,7 +117,7 @@ public class MainActivity extends ActionBarActivity {
         buttonPick2.setVisibility(View.VISIBLE);
         buttonGo.setVisibility(View.VISIBLE);
 
-        relativeLayout.setBackground(getResources().getDrawable(R.drawable.grass));
+        relativeLayout.setBackground(getResources().getDrawable(R.drawable.fiji));
         picking = false;
     }
 
